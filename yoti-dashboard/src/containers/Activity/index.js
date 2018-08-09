@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import TileSection from '../../components/TileSection'
-
-const ax = axios.create({
-  baseURL: 'http://localhost:3000/data/'
-});
+import utils from '../../utils';
 
 class Activity extends Component {
   constructor(props) {
@@ -16,7 +13,7 @@ class Activity extends Component {
   }
 
   componentDidMount() {
-    ax.get('mock-data.json')
+    utils.fetchServerData('mock-data.json')
       .then(response => this.setState({
         tileData: response.data.receipts
       }))
