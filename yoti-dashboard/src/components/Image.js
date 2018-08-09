@@ -1,13 +1,17 @@
 import React from 'react';
-import defaultLogo from  '../assets/images/default_user.png';
-import userLogo from '../assets/images/logged_user.jpeg';
+import PropTypes from 'prop-types';
 
-const Image = ({isConnected}) => {
-  const imgSrc = isConnected ? userLogo : defaultLogo;
-  const altImg = isConnected ? 'connected user image' : 'default user image';
-  return (
-    <img className='icon-user_selfie_ph img-circle' src={imgSrc} alt={altImg} />
-  )
-} 
+const Image = ({imgSrc, imgAlt = 'default user image', imgClassnames}) => <img className={imgClassnames} src={imgSrc} alt={imgAlt} />
+
+Image.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  imgAlt: PropTypes.string,
+  imgClassnames: PropTypes.string,
+};
+
+Image.defaultProps = {
+  imgAlt: 'default user image',
+  imgClassnames: 'icon-user_selfie_ph img-circle',
+};
 
 export default Image;
