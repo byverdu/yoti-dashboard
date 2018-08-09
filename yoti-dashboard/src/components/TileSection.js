@@ -2,18 +2,20 @@ import React from 'react';
 import utils from '../utils';
 import Tile from './Tile'
 
-const TileSection = (data) => {
-  return data.data.map(tileData => {
-    return (
-      <section>
-        <h3>
-          {utils.getDateFromUnix(tileData['unix-timestamp'])}
-        </h3>
+const TileSection = ({tileData}) => {
+  const {timeStamp, group} = tileData;
 
-        <Tile {...data} />
-      </section>
-    )
-  });
+  return (
+    <section key={timeStamp}>
+      <h3>
+        {utils.getDateFromUnix(timeStamp)}
+      </h3>
+      {
+        tileData.group.map(tile => <Tile {...tile} />)
+      }
+      <hr/>
+    </section>
+  );
 }
 
 export default TileSection;

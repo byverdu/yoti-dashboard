@@ -20,6 +20,8 @@ class Activity extends Component {
   }
 
   render() {
+    const sortedData = utils.groupByTimestamp(this.state.tileData);
+
     return (
       <section className="Activity">
         <h4>Activity</h4>
@@ -29,7 +31,10 @@ class Activity extends Component {
             See a record of everyone you have shared details with.
           </p>
 
-          <TileSection data={this.state.tileData} />
+          {
+            sortedData.map(item => <TileSection tileData={item} />)
+          }
+
         </main>
       </section>
     );

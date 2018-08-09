@@ -4,7 +4,8 @@ import utils from '../utils';
 const {
   getDateFromUnix,
   getHoursFromUnix,
-  fetchServerData
+  fetchServerData,
+  getTileDataForType
 } = utils;
 
 describe('Utils', () => {
@@ -34,6 +35,23 @@ describe('Utils', () => {
     });
     it('should convert a Unix timestamp into a string', () => {
       expect(getHoursFromUnix(1500394130)).toEqual('05:08');
+    });
+  });
+  describe('Utils.getTileDataForType', () => {
+    it('should be defined', () => {
+      expect(getTileDataForType).toBeDefined();
+    });
+    it('should be a function', () => {
+      expect(typeof getTileDataForType).toEqual('function');
+    });
+    it('should return an object with text and type props', () => {
+      expect(getTileDataForType()).toEqual('');
+    });
+    it('for "share" type should return text "Yoti Shared" and type "transaction"', () => {
+      expect(getTileDataForType('share')).toEqual('Yoti Shared');
+    });
+    it('for "application" type should return text "Yoti Application" and type "application"', () => {
+      expect(getTileDataForType('application')).toEqual('Yoti Application');
     });
   });
   describe('Utils.fetchServerData', () => {
