@@ -6,12 +6,12 @@ const TileSection = ({tileData}) => {
   const {timeStamp, group} = tileData;
 
   return (
-    <section key={timeStamp}>
+    <section>
       <h3>
         {utils.getDateFromUnix(timeStamp)}
       </h3>
       {
-        tileData.group.map(tile => <Tile {...tile} />)
+        group.map((tile, index) => <Tile key={index} {...tile} />)
       }
       <hr/>
     </section>

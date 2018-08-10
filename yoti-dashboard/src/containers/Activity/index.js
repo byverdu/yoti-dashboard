@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import TileSection from '../../components/TileSection'
 import utils from '../../utils';
 
@@ -32,7 +31,7 @@ class Activity extends Component {
           </p>
 
           {
-            sortedData.map(item => <TileSection tileData={item} />)
+            sortedData.map(item => <TileSection key={item.timeStamp} tileData={item} />)
           }
 
         </main>
