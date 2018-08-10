@@ -1,6 +1,37 @@
 # Yoti Front End Developer Code Test
 ___
 
+### How to run this exercise
+
+```bash
+# clone the repo
+> git clone git@github.com:byverdu/yoti-dashboard.git
+
+# cd into the react app
+> cd yoti-dashboard && cd yoti-dashboard
+
+# install dependencies
+# npm
+> npm install
+
+# yarn
+> yarn install
+
+# run the tests
+# npm
+> npm test
+
+# yarn
+> yarn test
+
+# run the repo
+# npm
+> npm start
+
+# yarn
+> yarn start
+```
+
 *Your time is valuable - please try not to spend more than a day working on this exercise.*
 
 ### The Task
