@@ -7,7 +7,6 @@ const ax = axios.create({
 });
 
 const utils = (function() {
-  console.log(this)
   function getDateFromUnix(timeStamp) {
     return moment.unix(timeStamp).format('DD MMMM YYYY');
   }
@@ -40,7 +39,6 @@ const utils = (function() {
       .sort((a,b) => b.timeStamp - a.timeStamp)
   }
   
-
   return {
     getDateFromUnix,
     getHoursFromUnix,
@@ -49,6 +47,5 @@ const utils = (function() {
     groupByTimestamp
   }
 })();
-
 
 export default utils;
