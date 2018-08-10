@@ -25,7 +25,6 @@ class ModalWrapper extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
     if (nextProps.hasBeenClicked) {
       this.setState({ modalIsOpen: true });
     }
