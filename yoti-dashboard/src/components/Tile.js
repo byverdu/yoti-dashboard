@@ -40,7 +40,7 @@ class Tile extends Component {
         <h3>
           {utils.getDateFromUnix(timestamp)}
         </h3>
-        <ModalWrapper hasBeenClicked={this.state.hasBeenClicked} />
+        <ModalWrapper hasBeenClicked={this.state.hasBeenClicked} cardData={this.props} />
       </section>
     );
   }

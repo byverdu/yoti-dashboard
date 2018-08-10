@@ -32,7 +32,7 @@ ___
 
 *Activity Modal Annotated*
 
-![](./assets/designs/dashboard-activity-detail-annostated.png)
+![](./assets/designs/dashboard-activity-detail-annotated.png)
 
 1: Application `bg-color`.
 

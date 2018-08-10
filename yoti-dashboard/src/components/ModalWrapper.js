@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
+import Card from './Card';
 
 const customStyles = {
   content: {
@@ -49,7 +50,7 @@ class ModalWrapper extends Component {
         contentLabel="Example Modal"
       >
         <button onClick={this.closeModal}>X</button>
-        <div>Modal</div>
+        <Card {...this.props.cardData} />
       </Modal>
     );
   }
