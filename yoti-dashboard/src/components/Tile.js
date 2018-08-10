@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import utils from '../utils';
 import Image from './Image';
 import ModalWrapper from './ModalWrapper';
-import defaultLogo from  '../assets/images/default_user.png';
+import defaultLogo from '../assets/images/default_user.png';
 
 class Tile extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class Tile extends Component {
 
   render() {
 
-    const {type, transaction} = this.props;
+    const { type, transaction } = this.props;
     const text = utils.getTileDataForType(type);
     const timestamp = transaction['unix-timestamp'];
 
@@ -34,12 +34,15 @@ class Tile extends Component {
         <div>
           {text}
         </div>
-        <h3>
-          {utils.getHoursFromUnix(timestamp)}
-        </h3>
-        <h3>
-          {utils.getDateFromUnix(timestamp)}
-        </h3>
+        <div>
+          <h3>
+            {utils.getHoursFromUnix(timestamp)}
+          </h3>
+          <h3>
+            {utils.getDateFromUnix(timestamp)}
+          </h3>
+        </div>
+
         <ModalWrapper hasBeenClicked={this.state.hasBeenClicked} cardData={this.props} />
       </section>
     );

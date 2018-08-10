@@ -7,7 +7,7 @@ const TileSection = ({tileData}) => {
 
   return (
     <section>
-      <h3>
+      <h3  className="list-header">
         {utils.getDateFromUnix(timeStamp)}
       </h3>
       {
