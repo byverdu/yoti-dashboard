@@ -133,11 +133,99 @@ $border: 1px solid rgba($color: $color-3, $alpha: .2);
       }
     }
   }
+
+  &-modal {
+    width: 400px;
+
+    &__btn {
+      border: 0;
+      position: absolute;
+      right: -35px;
+      z-index: 1;
+      background: transparent;
+      color: white;
+      font-size: 25px;
+      top: -10px;
+    }
+  }
+
+  &-card {
+    position: relative;
+
+    &__header {
+      height: 120px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      
+      &-image {
+        width: 80px;
+      }
+    }
+
+    &__main {
+      padding: $gutter;
+      text-align: center;
+
+      &-image {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+
+        &-user {
+          position: relative;
+
+          .icon-logo_circle {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+          }
+        }
+
+        .icon-receipt_confirmed {
+          margin-top: $gutter;
+        }
+      }
+
+      &-info {
+        border-bottom: $border;
+        padding-bottom: ($gutter / 2)
+      }
+
+      &-attributes {
+        text-align: left;
+        margin-top: $gutter;
+
+        &-title {
+          color: $color-3b;
+          font-size: 16px;
+          margin-bottom: 0px;
+        }
+
+        &-text {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
 
-.login-footer a {
-  &:hover {
-    color: $color-17;
-    text-decoration: underline;
+.login-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  a {
+    &:hover {
+      color: $color-17;
+      text-decoration: underline;
+    }
   }
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, .5) !important;
 }

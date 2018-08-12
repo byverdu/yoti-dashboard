@@ -7,24 +7,23 @@ import defaultLogo from  '../assets/images/default_user.png';
 const CardHeader = ({appearance}) => {
   const imgSrc = appearance['bg-img'] || appearance['bg-logo'] || defaultLogo;
   return (
-    <header style={{backgroundColor: appearance['bg-color']}}>
-      <Image imgSrc={imgSrc} />
+    <header className="yoti-card__header" style={{backgroundColor: appearance['bg-color']}}>
+      <Image imgClassnames="yoti-card__header-image" imgSrc={imgSrc} />
     </header>
   );
 } 
 
 const CardImageShare = ({attributes}) => {
   const selfie = attributes.find(item => item.selfie);
-
-  console.log(selfie)
+  const imgClassnames = 'img-circle icon-user_selfie_ph_medium';
 
   return selfie ?
-    <Image imgSrc={selfie.selfie} /> :
-    <Image imgSrc={defaultLogo} />
+    <Image imgClassnames={imgClassnames} imgSrc={selfie.selfie} /> :
+    <Image imgClassnames={imgClassnames} imgSrc={defaultLogo} />
 }
 
 const CardImage = cardData => cardData.type === 'application' ?
-  <Image imgSrc={userLogo} /> :
+  <Image imgClassnames="img-circle icon-user_selfie_ph_medium" imgSrc={userLogo} /> :
   <CardImageShare {...cardData.transaction} />
 
 const cardTimeStamp = timeStamp => `at ${utils.getHoursFromUnix(timeStamp)} on ${utils.getDateFromUnix(timeStamp)}`;
@@ -55,8 +54,12 @@ const CardAttributes = cardData => {
     const key = Object.keys(attr)[0];
     return (
       <div key={key}>
-        <h6>{attrMap[key]}</h6>
-        <p>{key === 'selfie' ? 'Yes' : attr[key]}</p>
+        <h6 className="yoti-card__main-attributes-title">
+          {attrMap[key]}
+        </h6>
+        <p className="yoti-card__main-attributes-text">
+          {key === 'selfie' ? 'Yes' : attr[key]}
+        </p>
       </div>
     )
   })
@@ -64,22 +67,26 @@ const CardAttributes = cardData => {
 
 const Card = cardData => {
   return (
-    <section>
+    <section className="yoti-card">
       {
         cardData.type === 'application' && <CardHeader {...cardData.application} />
       }
-      <main>
-      {
-        <CardImage {...cardData} />
-      }
-      <section>
-        {
-          <CardTitle {...cardData} />        
-        }
-        {
-          <CardAttributes {...cardData} />        
-        }
-      </section>
+      <main className="yoti-card__main">
+        <div className="yoti-card__main-image">
+          <div className="yoti-card__main-image-user">
+            { <CardImage {...cardData} /> }
+            <div className="icon-logo_circle"></div>
+          </div>
+          <div className="icon-receipt_confirmed"></div>
+        </div>
+        <div className="yoti-card__main-info">
+          { <CardTitle {...cardData} /> }
+        </div>
+        <section className="yoti-card__main-attributes">
+          {
+            <CardAttributes {...cardData} />        
+          }
+        </section>
       </main>
     </section>
   )

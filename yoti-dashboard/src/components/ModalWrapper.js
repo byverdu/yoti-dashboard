@@ -9,7 +9,11 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    padding: '0',
+    overflow: 'visible',
+    boxShadow: '0 0 10px black',
+    border: '0'
   }
 };
 
@@ -46,10 +50,11 @@ class ModalWrapper extends Component {
         isOpen={this.state.modalIsOpen}
         onRequestClose={this.closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
       >
-        <button onClick={this.closeModal}>X</button>
-        <Card {...this.props.cardData} />
+        <div className="yoti-modal">
+          <button className="yoti-modal__btn" onClick={this.closeModal}>X</button>
+          <Card {...this.props.cardData} />
+        </div>
       </Modal>
     );
   }
