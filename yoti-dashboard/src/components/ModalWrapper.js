@@ -50,6 +50,7 @@ class ModalWrapper extends Component {
         isOpen={this.state.modalIsOpen}
         onRequestClose={this.closeModal}
         style={customStyles}
+        ariaHideApp={false}
       >
         <div className="yoti-modal">
           <button className="yoti-modal__btn" onClick={this.closeModal}>X</button>

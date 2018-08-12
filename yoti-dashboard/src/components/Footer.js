@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div className="privacy-policy bg-c-2 text-c-17" style={{height:'40px',fontSize:"12px",lineHeight:'40px',display: 'flex', justifyContent:'space-around', alignItems: 'center'}} >
             <span className="p-xs-l-20" style={{position:'absolute',left:'0px',display: 'flex', justifyContent:'center', alignItems: 'center'}} >
-              <span class="icon icon-logo-circle-no-border text-c-17" style={{verticalAlign:'middle',marginRight:'8px'}} data-reactid="34">
+              <span className="icon icon-logo-circle-no-border text-c-17" style={{verticalAlign:'middle',marginRight:'8px'}} data-reactid="34">
               </span>
               © Yoti Ltd. 2018
             </span>
