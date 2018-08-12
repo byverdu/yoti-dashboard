@@ -9,6 +9,7 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard">
         <Header isConnected />
+        <Sidebar />
         <section>
           <Sidebar />
           <Activity />
