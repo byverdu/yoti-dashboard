@@ -1,9 +1,15 @@
 @import '../yoti-theme/yoti-variables';
 
-$header-height: 70px;
+$navbar-height: $navbar-height;
 $gutter: 20px;
+$border: 1px solid rgba($color: $color-3, $alpha: .2);
 
 .yoti {
+
+  &-dashboard {
+    font-family: $font-family-sans-serif;
+  }
+
   &-header {
     position: sticky;
     top: 0;
@@ -11,8 +17,12 @@ $gutter: 20px;
     justify-content: space-between;
     background: $color-grey-1;
     align-items: center;
-    height: $header-height;
+    height: $navbar-height;
     padding: $gutter;
+
+    .icon-logo {
+      margin-left: 70px;
+    }
 
     &__user {
       display: flex;
@@ -25,7 +35,7 @@ $gutter: 20px;
         justify-content: space-around;
         align-items: center;
         background: $color-1a;
-        height: $header-height;
+        height: $navbar-height;
         margin-right: $gutter;
       }
     }
@@ -34,13 +44,13 @@ $gutter: 20px;
   &-sidebar {
     background-color: $color-grey-1;
     position: fixed;
-    top: $header-height;
-    width: 200px;
+    top: $navbar-height;
+    width: $yoti-portal-sidebar-width;
     height: 100%;
     z-index: -1;
     
     &__content {
-      height: ($header-height / 2);
+      height: $navbar-height;
       background: rgba($color: $color-2b, $alpha: .2);
       display: flex;
       align-items: center;
@@ -51,6 +61,76 @@ $gutter: 20px;
       color: $color-3;
       font-weight: 500;
       margin: 0 0 0 15px;
+    }
+  }
+
+  &-activity {
+    margin-left: $yoti-portal-sidebar-width;
+    padding: $gutter;
+
+    &__title {
+      margin: 0;
+      border-bottom: $border;
+      padding-bottom: 20px;
+      font-size: $font-size-h4;
+    }
+
+    &__main {
+
+      &-title {
+        font-size: $font-size-h3;
+        margin-top: ($gutter / 2);
+      }
+
+      &-section {
+        box-shadow: 0px 0px 1px rgba(0,0,0, .4);
+
+        .list-header {
+          border-bottom: 1px solid $color-grey-2;
+          padding: ($gutter / 2) $gutter;
+          margin-top: $gutter;
+          margin-bottom: 0;
+          font-weight: 400;
+        }
+      }
+
+      &-tile {
+        padding: ($gutter / 2) ($gutter * 2) ($gutter / 2) $gutter;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-of-type) {
+          border-bottom: $border;
+        }
+      }
+
+      .yoti-tile {
+
+        &__info {
+          display: flex;
+          align-items: center;
+          flex-grow: 1;
+
+          div:first-child {
+            margin-right: $gutter;
+          }
+
+          div:last-child {
+            margin-left: ($gutter * 2);
+          }
+        }
+
+        &__timestamp {
+          text-align: right;
+
+          &-text {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 400;
+            color: $color-3b;
+          }
+        }
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TileSection from '../../components/TileSection'
 import utils from '../../utils';
+import '../../components/components.css';
 
 class Activity extends Component {
   constructor(props) {
@@ -22,10 +23,10 @@ class Activity extends Component {
     const sortedData = utils.groupByTimestamp(this.state.tileData);
 
     return (
-      <section className="Activity">
-        <h4>Activity</h4>
-        <main className="Activity-main">
-          <h2>Activity</h2>
+      <section className="yoti-activity">
+        <h4 className="yoti-activity__title">Activity</h4>
+        <main className="yoti-activity__main">
+          <h3 className="yoti-activity__main-title">Activity</h3>
           <p>
             See a record of everyone you have shared details with.
           </p>

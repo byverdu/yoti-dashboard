@@ -28,19 +28,21 @@ class Tile extends Component {
     const timestamp = transaction['unix-timestamp'];
 
     return (
-      <section onClick={this.clickHandler}>
-        <div className="icon-activity_tick"></div>
-        <Image imgSrc={defaultLogo} />
-        <div>
-          {text}
+      <section onClick={this.clickHandler} className="yoti-activity__main-tile">
+        <div className="yoti-tile__info">
+          <div className="icon-activity_tick"></div>
+          <Image imgSrc={defaultLogo} />
+          <div>
+            {text}
+          </div>
         </div>
-        <div>
-          <h3>
+        <div className="yoti-tile__timestamp">
+          <h6 className="yoti-tile__timestamp-text">
             {utils.getHoursFromUnix(timestamp)}
-          </h3>
-          <h3>
+          </h6>
+          <h6 className="yoti-tile__timestamp-text">
             {utils.getDateFromUnix(timestamp)}
-          </h3>
+          </h6>
         </div>
 
         <ModalWrapper hasBeenClicked={this.state.hasBeenClicked} cardData={this.props} />

@@ -6,14 +6,13 @@ const TileSection = ({tileData}) => {
   const {timeStamp, group} = tileData;
 
   return (
-    <section>
-      <h3  className="list-header">
+    <section className="yoti-activity__main-section">
+      <h6 className="list-header">
         {utils.getDateFromUnix(timeStamp)}
-      </h3>
+      </h6>
       {
         group.map((tile, index) => <Tile key={index} {...tile} />)
       }
-      <hr/>
     </section>
   );
 }
