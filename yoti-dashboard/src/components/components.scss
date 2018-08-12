@@ -1,0 +1,48 @@
+@import '../yoti-theme/yoti-variables';
+
+$header-height: 70px;
+
+.yoti {
+  &-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background: $color-grey-1;
+    align-items: center;
+    height: $header-height;
+    padding: 20px;
+
+    &__user {
+      display: flex;
+      align-items: center;
+
+      .yoti-connection {
+        display: flex;
+        min-width: 180px;
+        padding: 0 10px;
+        justify-content: space-around;
+        align-items: center;
+        background: $color-1a;
+        height: $header-height;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &-sidebar {
+    background-color: $color-grey-1;
+    position: fixed;
+    top: $header-height;
+    width: 200px;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.login-footer a {
+  &:hover {
+    color: $color-17;
+    text-decoration: underline;
+  }
+}

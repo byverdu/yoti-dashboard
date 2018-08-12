@@ -8,7 +8,7 @@ const Connection = ({isConnected}) => {
   });
   const text = isConnected ? 'Connected' : 'Disconnected';
   return (
-    <div>
+    <div className="yoti-connection">
       {text}
       <div className={iconClassName}></div>
     </div>
