@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 import Footer from '../../components/Footer';
@@ -8,12 +8,14 @@ import './Dashboard.css';
 class Dashboard extends Component {
   render() {
     return (
-      <div className="yoti-dashboard">
-        <Header isConnected />
-        <Sidebar />
-        <Activity />
+      <Fragment>
+        <div className="yoti-dashboard">
+          <Header isConnected />
+          <Sidebar />
+          <Activity />
+        </div>
         <Footer />
-      </div>
+      </Fragment>
     );
   }
 }
