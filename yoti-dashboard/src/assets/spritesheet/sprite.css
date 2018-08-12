@@ -10,6 +10,13 @@
 	height: 18px;
 }
 
+.icon-logo-circle-no-border {
+	background: url("svg/sprite.css-e93da542.svg") 76% 68.289256% no-repeat;
+	width: 31px;
+  height: 31px;
+  display: block;
+}
+
 .icon-activity {
 	background: url("svg/sprite.css-e93da542.svg") 26.060606060606062% 91.98717948717949% no-repeat;
 	width: 22px;

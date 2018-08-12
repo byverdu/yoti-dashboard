@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
+import Footer from '../../components/Footer';
 import Activity from '../Activity'
 import './Dashboard.css';
 
@@ -10,10 +11,8 @@ class Dashboard extends Component {
       <div className="yoti-dashboard">
         <Header isConnected />
         <Sidebar />
-        <section>
-          <Sidebar />
-          <Activity />
-        </section>
+        <Activity />
+        <Footer />
       </div>
     );
   }

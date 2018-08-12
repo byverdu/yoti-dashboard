@@ -50,7 +50,6 @@ const CardAttributes = cardData => {
     'age': 'Age',
     'adress': 'Adress'
   };
-  const atrrValues = Object.keys(attributes);
   
   return attributes.map(attr => {
     const key = Object.keys(attr)[0];
